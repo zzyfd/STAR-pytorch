@@ -1,4 +1,4 @@
-# Attention-DCE
+## STAR-DCE
 
 Attention-guided deep curve estimation for HDR tone mapping
 
