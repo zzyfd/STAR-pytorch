@@ -7,38 +7,17 @@ import torchvision
 import torch.backends.cudnn as cudnn
 import torch.optim
 import os
-import sys
 import argparse
 import time
-import cv2
 from dataloaders.dataloader_hdrplus_enhance_portrait_corrected import EnhanceDataset
 from dataloaders.dataloader_FiveK import EnhanceDataset_FiveK
 import torch.nn.functional as F
-from models import model
-from models import model_1curve_mean
-from models import model_2curves_blendparam_mean, model
-from models import model_unet
-import losses
 import numpy as np
-from torchvision import transforms
 from torch.utils.tensorboard import SummaryWriter
 from datetime import datetime
 import random
 from util import calculate_ssim, calculate_psnr, tensor2img
 import models
-
-
-# def conv_compute_flops(conv_layer, in_height, in_width, e_in_ch=None, e_out_ch=None):
-#     if isinstance(conv_layer, nn.Conv2d):
-#         out_channel = conv_layer.out_channels
-#         in_channel = conv_layer.in_channels
-#         groups = conv_layer.groups
-#     else:
-#         out_channel = conv_layer.out_features
-#         in_channel = e_in_ch
-#     bias_ops = 1 if conv_layer.bias is not None else 0
-#     flops = (in_channel + bias_ops) * out_channel
-#     return flops, 1., 1.
 
 
 def weights_init(m):
@@ -67,7 +46,6 @@ def eval(config):
     torch.cuda.manual_seed(0)
     np.random.seed(0)
 
-    # DCE_net = model_liTr.enhance_net_nopool().cuda()
     DCE_net = models.build_model(config)
 
     print(DCE_net)
@@ -182,9 +160,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
 
-    path = 'G:\\fivek_dataset\\fivek_dataset\\raw_photos\\FiveK_Lightroom_Export_InputDayLight\\val'
-    path = 'H:\\Fivek\\Full\\val'
-    parser.add_argument('--lowlight_images_path', type=str, default=path)
+
+    parser.add_argument('--lowlight_images_path', type=str)
     parser.add_argument('--lr', type=float, default=0.0001)
     parser.add_argument('--lr_type', type=str, default='fix')
     parser.add_argument('--weight_decay', type=float, default=0.0001)
