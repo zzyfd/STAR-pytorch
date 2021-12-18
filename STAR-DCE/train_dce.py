@@ -155,7 +155,7 @@ def train(config):
 
 def get_args():
     parser = argparse.ArgumentParser(allow_abbrev=False)
-    parser.add_argument('--lowlight_images_path', type=str, default=path)
+    parser.add_argument('--lowlight_images_path', type=str)
     parser.add_argument('--lr', type=float, default=0.0001)
     parser.add_argument('--lr_type', type=str, default='fix')
     parser.add_argument('--weight_decay', type=float, default=0.0001)
