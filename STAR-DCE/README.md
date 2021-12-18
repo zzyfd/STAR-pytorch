@@ -1,6 +1,8 @@
 ## STAR-DCE
 
-Attention-guided deep curve estimation for HDR tone mapping
+Implementation for paper "STAR: A Structure-aware Lightweight Transformer for Real-time Image Enhancement" on low light enhancement tasks.
+
+
 
 To train the AttentionDCE model with HDRPlus paired images (256x256x3):
 ```
