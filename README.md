@@ -93,7 +93,7 @@ cd STAR-DCE
 ```
 
 ### Citation
-If this code helps your research, please cite our paper:
+If this code helps your research, please cite our paper :)
 
 ```
 @inproceedings{zhang2021star,
