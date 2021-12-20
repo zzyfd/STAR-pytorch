@@ -180,8 +180,8 @@ def get_args():
     parser.add_argument('--dataset', type=str, default='fivek')
     parser.add_argument('--pretrain_dir', type=str,
                         default="snapshots/pretrained/Epoch99.pth")
-    parser.add_argument('--image_h', type=int, default=256)
-    parser.add_argument('--image_w', type=int, default=256)
+    parser.add_argument('--image_h', type=int, default=1200)
+    parser.add_argument('--image_w', type=int, default=900)
     parser.add_argument('--image_ds', type=int, default=256)
 
     parser.add_argument('--model', type=str, default='STAR-DCE-Base')
