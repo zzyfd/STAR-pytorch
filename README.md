@@ -5,7 +5,7 @@ Implementation for paper "STAR: A Structure-aware Lightweight Transformer for Re
 
 ## STAR-DCE
 The pytorch implementation of low light enhancement with STAR on Adobe-MIT FiveK dataset. You can find it in STAR-DCE directory. 
-Here we adopt the pipleline of Zero-DCE ( [paper](https://li-chongyi.github.io/Proj_Zero-DCE.html) | [code](https://github.com/Li-Chongyi/Zero-DCE) ), just replacing the CNN backbone with STAR.  In Zero-DCE, for each image the network will regress a group of curves, which will then applied on the source image iteratively. You can find more details in the original repo [Zero-DCE](https://github.com/Li-Chongyi/Zero-DCE). 
+Here we adopt the pipleline of Zero-DCE ( [paper](https://li-chongyi.github.io/Proj_Zero-DCE.html) | [code](https://github.com/Li-Chongyi/Zero-DCE) ), just replacing the CNN backbone with STAR.  In Zero-DCE, for each image the network will regress a group of curves, which will then be applied on the source image iteratively. You can find more details in the original repo [Zero-DCE](https://github.com/Li-Chongyi/Zero-DCE). 
 
 ### Requirements
 - numpy
